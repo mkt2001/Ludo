@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f2b">
+  <title>Ludo Champ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="crown">♛</span><div><h1>Ludo Champ</h1><p>Classic Ludo • Local multiplayer</p></div></div>
+    <div class="top-actions">
+      <label class="select-label">Board
+        <select id="themeSelect" aria-label="Board theme">
+          <option value="classic">Classic</option><option value="royal">Royal</option><option value="neon">Neon</option>
+        </select>
+      </label>
+      <button id="soundToggle" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">🔊</button>
+      <button id="newGameBtn" class="secondary-btn">New game</button>
+    </div>
+  </header>
+
+  <main class="game-layout">
+    <section class="board-panel">
+      <div class="board-heading"><div><h2>Classic Ludo Board</h2><p id="statusText" aria-live="polite">Red's turn — roll the red dice.</p></div><span class="turn-pill" id="turnPill">RED TURN</span></div>
+      <div class="board-wrap"><svg id="ludoBoard" viewBox="0 0 600 600" role="img" aria-label="Classic four-player Ludo board"></svg></div>
+      <div class="rules-note">Roll a 6 to bring a token out. Tap a highlighted token to move. Reach home with an exact roll.</div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="players-grid" aria-label="Player dice controls">
+        <article class="player-card red active-player" id="card-red">
+          <div class="player-title"><span class="player-dot"></span><div><h3>Red</h3><small id="redProgress">0 / 4 home</small></div></div>
+          <div class="dice-row"><div class="dice-face" id="dice-red">⚀</div><button class="roll-btn" id="roll-red">Roll Red</button></div>
+        </article>
+        <article class="player-card green" id="card-green">
+          <div class="player-title"><span class="player-dot"></span><div><h3>Green</h3><small id="greenProgress">0 / 4 home</small></div></div>
+          <div class="dice-row"><div class="dice-face" id="dice-green">⚀</div><button class="roll-btn" id="roll-green">Roll Green</button></div>
+        </article>
+        <article class="player-card yellow" id="card-yellow">
+          <div class="player-title"><span class="player-dot"></span><div><h3>Yellow</h3><small id="yellowProgress">0 / 4 home</small></div></div>
+          <div class="dice-row"><div class="dice-face" id="dice-yellow">⚀</div><button class="roll-btn" id="roll-yellow">Roll Yellow</button></div>
+        </article>
+        <article class="player-card blue" id="card-blue">
+          <div class="player-title"><span class="player-dot"></span><div><h3>Blue</h3><small id="blueProgress">0 / 4 home</small></div></div>
+          <div class="dice-row"><div class="dice-face" id="dice-blue">⚀</div><button class="roll-btn" id="roll-blue">Roll Blue</button></div>
+        </article>
+      </section>
+      <section class="help-card">
+        <h3>How to play</h3>
+        <ol><li>Only the active player's dice button works.</li><li>Roll a 6 to release a token from base.</li><li>After rolling, tap one highlighted token to move it.</li><li>Land on an unsafe opponent square to send them home.</li><li>Roll the exact number to finish a token.</li></ol>
+      </section>
+      <section class="help-card compact"><h3>Game status</h3><p id="messageText">A classic four-player game. Play locally on one device.</p><button id="passBtn" class="secondary-btn full" disabled>Pass turn</button></section>
+    </aside>
+  </main>
+  <footer>Offline-friendly game engine • No account required</footer>
+  <script src="script.js"></script>
+</body>
+</html>

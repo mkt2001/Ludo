@@ -1,0 +1,6 @@
+{
+  "appId": "com.maheshtripathi.ludochamp",
+  "appName": "Ludo Champ",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
